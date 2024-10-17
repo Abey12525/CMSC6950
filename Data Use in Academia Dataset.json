@@ -1,0 +1,563 @@
+{
+    "dataset_id": "872ec45a-c57f-ee11-8179-0022480b462c",
+    "name": "Data Use in Academia Dataset",
+    "dataset_unique_id": "0065200",
+    "archive_nid": null,
+    "status": "PUBLISHED",
+    "created_on": "2023-11-10T12:33:31Z",
+    "created_by": "Brian William Stacy",
+    "created_email": "bstacy@worldbank.org",
+    "modified_on": "2024-05-13T14:26:23Z",
+    "modified_by": "# SRV-export type first = {second}DDH2-PRD",
+    "version_number": "2",
+    "last_updated_date": "2023-11-27T00:00:00",
+    "app_url": null,
+    "app_legacy_url": null,
+    "priority_tags": null,
+    "high_priority_tags": null,
+    "identification": {
+        "id": "882ec45a-c57f-ee11-8179-0022480b462c",
+        "title": "Data Use in Academia Dataset",
+        "urltitle": "data_use_in_academia_dataset",
+        "subtitle": "Data used for the working paper, \"Missing Evidence:  Tracking Academic Data Use around the World\"",
+        "description": "<p>This dataset contains metadata (title, abstract, date of publication, field, etc) for around 1 million academic articles. Each record contains additional information on the country of study and whether the article makes use of data. Machine learning tools were used to classify the country of study and data use.</p><p><br></p><p class=\"ql-align-justify\">Our data source of academic articles is the Semantic Scholar Open Research Corpus (S2ORC) (Lo et al. 2020). The corpus contains more than 130 million English language academic papers across multiple disciplines. The papers included in the Semantic Scholar corpus are gathered directly from publishers, from open archives such as arXiv or PubMed, and crawled from the internet.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">We placed some restrictions on the articles to make them usable and relevant for our purposes. First, only articles with an abstract and parsed PDF or latex file are included in the analysis. The full text of the abstract is necessary to classify the country of study and whether the article uses data. The parsed PDF and latex file are important for extracting important information like the date of publication and field of study. This restriction eliminated a large number of articles in the original corpus. Around 30 million articles remain after keeping only articles with a parsable (i.e., suitable for digital processing) PDF, and around 26% of those 30 million are eliminated when removing articles without an abstract. Second, only articles from the year 2000 to 2020 were considered. This restriction eliminated an additional 9% of the remaining articles. Finally, articles from the following fields of study were excluded, as we aim to focus on fields that are likely to use data produced by countries? national statistical system: Biology, Chemistry, Engineering, Physics, Materials Science, Environmental Science, Geology, History, Philosophy, Math, Computer Science, and Art. Fields that <em>are</em> included are: Economics, Political Science, Business, Sociology, Medicine, and Psychology. This third restriction eliminated around 34% of the remaining articles. From an initial corpus of 136 million articles, this resulted in a final corpus of around 10 million articles.</p><p class=\"ql-align-justify\"><br></p><p>Due to the intensive computer resources required, a set of 1,037,748 articles were randomly selected from the 10 million articles in our restricted corpus as a convenience sample.&nbsp;</p><p><br></p><p class=\"ql-align-justify\">The empirical approach employed in this project utilizes text mining with Natural Language Processing (NLP). The goal of NLP is to extract structured information from raw, unstructured text. In this project, NLP is used to extract the country of study and whether the paper makes use of data. We will discuss each of these in turn.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">To determine the country or countries of study in each academic article, two approaches are employed based on information found in the title, abstract, or topic fields. The first approach uses regular expression searches based on the presence of ISO3166 country names. A defined set of country names is compiled, and the presence of these names is checked in the relevant fields. This approach is transparent, widely used in social science research, and easily extended to other languages. However, there is a potential for exclusion errors if a country?s name is spelled non-standardly.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The second approach is based on Named Entity Recognition (NER), which uses machine learning to identify objects from text, utilizing the spaCy Python library. The Named Entity Recognition algorithm splits text into named entities, and NER is used in this project to identify countries of study in the academic articles. SpaCy supports multiple languages and has been trained on multiple spellings of countries, overcoming some of the limitations of the regular expression approach. If a country is identified by either the regular expression search or NER, it is linked to the article. Note that one article can be linked to more than one country.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The second task is to classify whether the paper uses data. A supervised machine learning approach is employed, where 3500 publications were first randomly selected and manually labeled by human raters using the Mechanical Turk service (Paszke et al. 2019).<a href=\"https://worldbankgroup-my.sharepoint.com/personal/bstacy_worldbank_org/Documents/DECIS/SPI/Academia_Data_Use/Data_Use_Academia_20231109.docx#_ftn1\" rel=\"noopener noreferrer\" target=\"_blank\">[1]</a> To make sure the human raters had a similar and appropriate definition of data in mind, they were given the following instructions before seeing their first paper:</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><em style=\"color: black;\">Each of these documents is an academic article. The goal of this study is to measure whether a specific academic article is using data and from which country the data came.</em></p><p class=\"ql-align-justify\"><em style=\"color: black;\">There are two classification tasks in this exercise:</em></p><p class=\"ql-align-justify\"><em>1.&nbsp;&nbsp;&nbsp;&nbsp;</em><em style=\"color: black;\">identifying whether an academic article is using data from any country</em></p><p class=\"ql-align-justify\"><em>2.&nbsp;&nbsp;&nbsp;&nbsp;</em><em style=\"color: black;\">Identifying from which country that data came.</em></p><p class=\"ql-align-justify\"><em style=\"color: black;\">For task 1, we are looking specifically at the use of data. Data is any information that has been collected, observed, generated or created to produce research findings. As an example, a study that reports findings or analysis using a survey data, uses data. Some clues to indicate that a study does use data includes whether a survey or census is described, a statistical model estimated, or a table or means or summary statistics is reported.</em></p><p class=\"ql-align-justify\"><em style=\"color: black;\">After an article is classified as using data, please note the type of data used. The options are population or business census, survey data, administrative data, geospatial data, private sector data, and other data. If no data is used, then mark \"Not applicable\". In cases where multiple data types are used, please click multiple options.</em><a href=\"https://worldbankgroup-my.sharepoint.com/personal/bstacy_worldbank_org/Documents/DECIS/SPI/Academia_Data_Use/Data_Use_Academia_20231109.docx#_ftn2\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: black;\"><strong><em>[2]</em></strong></a></p><p class=\"ql-align-justify\"><em style=\"color: black;\">For task 2, we are looking at the country or countries that are studied in the article. In some cases, no country may be applicable. For instance, if the research is theoretical and has no specific country application. In some cases, the research article may involve multiple countries. In these cases, select all countries that are discussed in the paper</em><span style=\"color: black;\">.</span></p><p class=\"ql-align-justify\"><em style=\"color: black;\">We expect between 10 and 35 percent of all articles to use data.</em></p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The median amount of time that a worker spent on an article, measured as the time between when the article was accepted to be classified by the worker and when the classification was submitted was 25.4 minutes. If human raters were exclusively used rather than machine learning tools, then the corpus of 1,037,748 articles examined in this study would take around 50 years of human work time to review at a cost of $3,113,244, which assumes a cost of $3 per article as was paid to MTurk workers.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">A model is next trained on the 3,500 labelled articles. We use a distilled version of the BERT (bidirectional Encoder Representations for transformers) model to encode raw text into a numeric format suitable for predictions (Devlin et al. (2018)). BERT is pre-trained on a large corpus comprising the Toronto Book Corpus and Wikipedia. The distilled version (DistilBERT) is a compressed model that is 60% the size of BERT and retains 97% of the language understanding capabilities and is 60% faster (Sanh, Debut, Chaumond, Wolf 2019). We use PyTorch to produce a model to classify articles based on the labeled data. Of the 3,500 articles that were hand coded by the MTurk workers, 900 are fed to the machine learning model. 900 articles were selected because of computational limitations in training the NLP model.&nbsp;A classification of ?uses data? was assigned if the model predicted an article used data with at least 90% confidence.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The performance of the models classifying articles to countries and as using data or not can be compared to the classification by the human raters. We consider the human raters as giving us the ground truth. This may underestimate the model performance if the workers at times got the allocation wrong in a way that would not apply to the model.&nbsp;For instance, a human rater could mistake the Republic of Korea for the Democratic People?s Republic of Korea. If both humans and the model perform the same kind of errors, then the performance reported here will be overestimated.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The model was able to predict whether an article made use of data with 87% accuracy evaluated on the set of articles held out of the model training. The correlation between the number of articles written about each country using data estimated under the two approaches is given in the figure below. The number of articles represents an aggregate total of research output using data for each country summed from the corpus of papers that were not used to train the model. The Pearson correlation between the human raters and the NLP predictions is 0.996.</p><p><br></p><p><a href=\"https://worldbankgroup-my.sharepoint.com/personal/bstacy_worldbank_org/Documents/DECIS/SPI/Academia_Data_Use/Data_Use_Academia_20231109.docx#_ftnref1\" rel=\"noopener noreferrer\" target=\"_blank\">[1]</a> A stratified sample of articles for the training set was taken. 15% of the articles were medical, 15% psychology, 25% economics, 25% political science, 10% were tagged as business, and 10% sociology articles.&nbsp;</p>",
+        "acronym": "data_use_academia",
+        "topics": null,
+        "practice": null,
+        "work_unit": {
+            "code": "0000009682",
+            "name": "Development Indicators and Data"
+        },
+        "working_unit_vpu": null,
+        "wb_project_reference": null,
+        "grant_number": null,
+        "parent_dataset": null,
+        "collection_id": null,
+        "collection_code": null,
+        "translated_title": null,
+        "point_of_contact": [],
+        "dates": [
+            {
+                "id": "97c99f89-cf7f-ee11-8179-0022480b462c",
+                "date": "11/27/2023 12:00:00 AM",
+                "type": "RELEASE_DATE"
+            },
+            {
+                "id": "99c99f89-cf7f-ee11-8179-0022480b462c",
+                "date": "11/27/2023 12:00:00 AM",
+                "type": "LAST_UPDATED_DATE"
+            }
+        ],
+        "language_supported": [
+            {
+                "id": "9bc99f89-cf7f-ee11-8179-0022480b462c",
+                "code": "EN",
+                "name": "English",
+                "language_id": "fb3550b0-f4af-ea11-a812-000d3a32896d"
+            }
+        ],
+        "citation": "Brian Stacy, Lucas Kitzm?ller, Xiaoyu Wang, Daniel Gerszon Mahler, and Umar Serajuddin. 2023.  Dataset from \"Missing Evidence:  Tracking Academic Data Use around the World\"",
+        "custom_schema_url": null,
+        "doi_url": null
+    },
+    "keywords": null,
+    "constraints": {
+        "id": "8d2ec45a-c57f-ee11-8179-0022480b462c",
+        "legal": {
+            "access_constraints": null,
+            "use_constraints": null,
+            "other_constraints": null,
+            "disclaimer": null,
+            "copyright": null
+        },
+        "security": {
+            "classification": "Public",
+            "is_restricted": false,
+            "exception": null,
+            "user_note": null
+        },
+        "license": {
+            "license_id": "Creative Commons Attribution 4.0",
+            "custom_license_information": null,
+            "license_reference": null
+        }
+    },
+    "data_quality": {
+        "id": "8e2ec45a-c57f-ee11-8179-0022480b462c",
+        "data_notes": null
+    },
+    "geographical_extent": {
+        "id": "8f2ec45a-c57f-ee11-8179-0022480b462c",
+        "description": "Global coverage with data for 217 economies.",
+        "coverage": [
+            {
+                "id": "a0c99f89-cf7f-ee11-8179-0022480b462c",
+                "code": "7E",
+                "name": "Europe and Central Asia"
+            },
+            {
+                "id": "a6c99f89-cf7f-ee11-8179-0022480b462c",
+                "code": "021",
+                "name": "North America"
+            },
+            {
+                "id": "a8c99f89-cf7f-ee11-8179-0022480b462c",
+                "code": "8S",
+                "name": "South Asia"
+            },
+            {
+                "id": "aac99f89-cf7f-ee11-8179-0022480b462c",
+                "code": "4E",
+                "name": "East Asia and Pacific"
+            },
+            {
+                "id": "acc99f89-cf7f-ee11-8179-0022480b462c",
+                "code": "5M",
+                "name": "Middle East and North Africa"
+            },
+            {
+                "id": "aec99f89-cf7f-ee11-8179-0022480b462c",
+                "code": "202",
+                "name": "Sub-Saharan Africa"
+            },
+            {
+                "id": "afc99f89-cf7f-ee11-8179-0022480b462c",
+                "code": "6L",
+                "name": "Latin America"
+            }
+        ],
+        "geo_json": null,
+        "bounding_box": {
+            "west_longitude": null,
+            "east_longitude": null,
+            "north_latitude": null,
+            "south_latitude": null
+        },
+        "vertical_extent": {
+            "min_value": null,
+            "max_value": null,
+            "vertical_CRS": null,
+            "vertical_CRS_id": null
+        }
+    },
+    "temporal_extent": {
+        "id": "902ec45a-c57f-ee11-8179-0022480b462c",
+        "end_date": "4/1/2020 12:00:00 AM",
+        "start_date": "1/1/2000 12:00:00 AM",
+        "description": null,
+        "duration": null,
+        "coverage": null
+    },
+    "temporal_resolution": {
+        "periodicity": "Annual"
+    },
+    "spatial_resolution": {
+        "id": "912ec45a-c57f-ee11-8179-0022480b462c",
+        "granularity": null,
+        "granularity_list": null,
+        "pixel_resolution": null
+    },
+    "reference_system": {
+        "id": "922ec45a-c57f-ee11-8179-0022480b462c",
+        "reference_id": null,
+        "version": "2",
+        "map_projection": null
+    },
+    "lineage": {
+        "id": "932ec45a-c57f-ee11-8179-0022480b462c",
+        "source_type": null,
+        "source_type_list": [
+            {
+                "id": "b0c99f89-cf7f-ee11-8179-0022480b462c",
+                "name": "Research and Think Tanks"
+            }
+        ],
+        "source": "Semantic Scholar Open Research Corpus (S2ORC) ",
+        "source_reference": null,
+        "statistical_concept_and_methodology": "<p class=\"ql-align-justify\">Our data source of academic articles is the Semantic Scholar Open Research Corpus (S2ORC) (Lo et al. 2020). The corpus contains more than 130 million English language academic papers across multiple disciplines. The papers included in the Semantic Scholar corpus are gathered directly from publishers, from open archives such as arXiv or PubMed, and crawled from the internet.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">We placed some restrictions on the articles to make them usable and relevant for our purposes. First, only articles with an abstract and parsed PDF or latex file are included in the analysis. The full text of the abstract is necessary to classify the country of study and whether the article uses data. The parsed PDF and latex file are important for extracting important information like the date of publication and field of study. This restriction eliminated a large number of articles in the original corpus. Around 30 million articles remain after keeping only articles with a parsable (i.e., suitable for digital processing) PDF, and around 26% of those 30 million are eliminated when removing articles without an abstract. Second, only articles from the year 2000 to 2020 were considered. This restriction eliminated an additional 9% of the remaining articles. Finally, articles from the following fields of study were excluded, as we aim to focus on fields that are likely to use data produced by countries? national statistical system: Biology, Chemistry, Engineering, Physics, Materials Science, Environmental Science, Geology, History, Philosophy, Math, Computer Science, and Art. Fields that <em>are</em> included are: Economics, Political Science, Business, Sociology, Medicine, and Psychology. This third restriction eliminated around 34% of the remaining articles. From an initial corpus of 136 million articles, this resulted in a final corpus of around 10 million articles.</p><p><br></p><p class=\"ql-align-justify\">The empirical approach employed in this project utilizes text mining with Natural Language Processing (NLP). The goal of NLP is to extract structured information from raw, unstructured text. In this project, NLP is used to extract the country of study and whether the paper makes use of data. We will discuss each of these in turn.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">To determine the country or countries of study in each academic article, two approaches are employed based on information found in the title, abstract, or topic fields. The first approach uses regular expression searches based on the presence of ISO3166 country names. A defined set of country names is compiled, and the presence of these names is checked in the relevant fields. This approach is transparent, widely used in social science research, and easily extended to other languages. However, there is a potential for exclusion errors if a country?s name is spelled non-standardly.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The second approach is based on Named Entity Recognition (NER), which uses machine learning to identify objects from text, utilizing the spaCy Python library. The Named Entity Recognition algorithm splits text into named entities, and NER is used in this project to identify countries of study in the academic articles. SpaCy supports multiple languages and has been trained on multiple spellings of countries, overcoming some of the limitations of the regular expression approach. If a country is identified by either the regular expression search or NER, it is linked to the article. Note that one article can be linked to more than one country.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The second task is to classify whether the paper uses data. A supervised machine learning approach is employed, where 3500 publications were first randomly selected and manually labeled by human raters using the Mechanical Turk service (Paszke et al. 2019).<a href=\"https://worldbankgroup-my.sharepoint.com/personal/bstacy_worldbank_org/Documents/DECIS/SPI/Academia_Data_Use/Data_Use_Academia_20231109.docx#_ftn1\" rel=\"noopener noreferrer\" target=\"_blank\">[1]</a> To make sure the human raters had a similar and appropriate definition of data in mind, they were given the following instructions before seeing their first paper: </p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><em style=\"color: black;\">Each of these documents is an academic article. The goal of this study is to measure whether a specific academic article is using data and from which country the data came.</em></p><p class=\"ql-align-justify\"><em style=\"color: black;\">There are two classification tasks in this exercise:</em></p><p class=\"ql-align-justify\"><em>1.&nbsp;&nbsp;&nbsp;&nbsp;</em><em style=\"color: black;\">identifying whether an academic article is using data from any country</em></p><p class=\"ql-align-justify\"><em>2.&nbsp;&nbsp;&nbsp;&nbsp;</em><em style=\"color: black;\">Identifying from which country that data came.</em></p><p class=\"ql-align-justify\"><em style=\"color: black;\">For task 1, we are looking specifically at the use of data. Data is any information that has been collected, observed, generated or created to produce research findings. As an example, a study that reports findings or analysis using a survey data, uses data. Some clues to indicate that a study does use data includes whether a survey or census is described, a statistical model estimated, or a table or means or summary statistics is reported.</em></p><p class=\"ql-align-justify\"><em style=\"color: black;\">After an article is classified as using data, please note the type of data used. The options are population or business census, survey data, administrative data, geospatial data, private sector data, and other data. If no data is used, then mark \"Not applicable\". In cases where multiple data types are used, please click multiple options.</em><a href=\"https://worldbankgroup-my.sharepoint.com/personal/bstacy_worldbank_org/Documents/DECIS/SPI/Academia_Data_Use/Data_Use_Academia_20231109.docx#_ftn2\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: black;\"><strong><em>[2]</em></strong></a></p><p class=\"ql-align-justify\"><em style=\"color: black;\">For task 2, we are looking at the country or countries that are studied in the article. In some cases, no country may be applicable. For instance, if the research is theoretical and has no specific country application. In some cases, the research article may involve multiple countries. In these cases, select all countries that are discussed in the paper</em><span style=\"color: black;\">.</span> </p><p class=\"ql-align-justify\"><em style=\"color: black;\">We expect between 10 and 35 percent of all articles to use data.</em></p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The median amount of time that a worker spent on an article, measured as the time between when the article was accepted to be classified by the worker and when the classification was submitted was 25.4 minutes. If human raters were exclusively used rather than machine learning tools, then the corpus of 1,037,748 articles examined in this study would take around 50 years of human work time to review at a cost of $3,113,244, which assumes a cost of $3 per article as was paid to MTurk workers.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">A model is next trained on the 3,500 labelled articles. We use a distilled version of the BERT (bidirectional Encoder Representations for transformers) model to encode raw text into a numeric format suitable for predictions (Devlin et al. (2018)). BERT is pre-trained on a large corpus comprising the Toronto Book Corpus and Wikipedia. The distilled version (DistilBERT) is a compressed model that is 60% the size of BERT and retains 97% of the language understanding capabilities and is 60% faster (Sanh, Debut, Chaumond, Wolf 2019). We use PyTorch to produce a model to classify articles based on the labeled data. Of the 3,500 articles that were hand coded by the MTurk workers, 900 are fed to the machine learning model. 900 articles were selected because of computational limitations in training the NLP model. &nbsp;A classification of ?uses data? was assigned if the model predicted an article used data with at least 90% confidence.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The performance of the models classifying articles to countries and as using data or not can be compared to the classification by the human raters. We consider the human raters as giving us the ground truth. This may underestimate the model performance if the workers at times got the allocation wrong in a way that would not apply to the model.&nbsp;For instance, a human rater could mistake the Republic of Korea for the Democratic People?s Republic of Korea. If both humans and the model perform the same kind of errors, then the performance reported here will be overestimated.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">The model was able to predict whether an article made use of data with 87% accuracy evaluated on the set of articles held out of the model training. The correlation between the number of articles written about each country using data estimated under the two approaches is given in the figure below. The number of articles represents an aggregate total of research output using data for each country summed from the corpus of papers that were not used to train the model. The Pearson correlation between the human raters and the NLP predictions is 0.996. </p><p><br></p><p>  <a href=\"https://worldbankgroup-my.sharepoint.com/personal/bstacy_worldbank_org/Documents/DECIS/SPI/Academia_Data_Use/Data_Use_Academia_20231109.docx#_ftnref1\" rel=\"noopener noreferrer\" target=\"_blank\">[1]</a> A stratified sample of articles for the training set was taken. 15% of the articles were medical, 15% psychology, 25% economics, 25% political science, 10% were tagged as business, and 10% sociology articles.&nbsp;</p><p><br></p><p class=\"ql-align-justify\">Lo, Kyle, Lucy Lu Wang, Mark Neumann, Rodney Kinney, and Daniel Weld. 2020. ?S2ORC: The Semantic Scholar Open Research Corpus.? In <em>Proceedings of the 58</em><sup><em>th</em></sup><em> Annual Meeting of the Association for Computational Linguistics</em>, 4969?83. Online: Association for Computational Linguistics. <a href=\"https://doi.org/10.18653/v1/2020.acl-main.447\" rel=\"noopener noreferrer\" target=\"_blank\">https://doi.org/10.18653/v1/2020.acl-main.447</a>.</p><p><br></p>",
+        "base_period": null,
+        "aggregation_method": "Data for individual countries was aggregated by counting the number of articles using data.",
+        "description": null,
+        "related_links_and_publications": null,
+        "publication_place": null,
+        "funding_name_abbreviation_role": null,
+        "study_type": null,
+        "deviations_from_sample_design": null,
+        "other_acknowledgements": "We acknowledge financial support from a World Bank Research Support Grant",
+        "harvest_system": "Others",
+        "harvest_system_reference": null
+    },
+    "maintenance_information": {
+        "id": "942ec45a-c57f-ee11-8179-0022480b462c",
+        "update_frequency": null,
+        "update_schedule": null,
+        "maintenance_note": null,
+        "embargo_date": null,
+        "embargo_comments": null,
+        "version_description": null,
+        "version_production_date": "5/13/2024 2:26:23 PM",
+        "version_producer": null,
+        "version_notes": "1",
+        "version_history": [
+            {
+                "version": "1",
+                "version_label": "first publish",
+                "version_id": "@2023-11-27T16:03:29.9454803Z",
+                "uuid": "808a995b-3e8d-ee11-8179-000d3a32a3d4",
+                "version_date": null
+            },
+            {
+                "version": "2",
+                "version_label": "new resource",
+                "version_id": null,
+                "uuid": "6abe30a3-3411-ef11-9f8a-000d3a5bae7b",
+                "version_date": null
+            }
+        ]
+    },
+    "subscription": {
+        "id": "952ec45a-c57f-ee11-8179-0022480b462c",
+        "subscription_date_from": null,
+        "subscription_date_to": null
+    },
+    "resources": [
+        {
+            "resource_id": "67cd80cb-cd7f-ee11-8179-000d3a32e0cf",
+            "name": "data_use_dataset_fst",
+            "resource_unique_id": "DR0092802",
+            "archive_nid": null,
+            "last_updated": "5/8/2024 12:00:00 AM",
+            "last_updated_date": "2024-05-08T00:00:00",
+            "first_published_date": "11/27/2023 12:00:00 AM",
+            "download_count": null,
+            "dataset_id": "872ec45a-c57f-ee11-8179-0022480b462c",
+            "dataset": {
+                "id": "872ec45a-c57f-ee11-8179-0022480b462c",
+                "name": "Data Use in Academia Dataset",
+                "unique_id": "0065200"
+            },
+            "identification": {
+                "id": "6acd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "title": "data_use_dataset_fst",
+                "type": null,
+                "description": "<p>This file contains a dataset of around 1 million articles in <a href=\"https://www.fstpackage.org/index.html\" rel=\"noopener noreferrer\" target=\"_blank\">FST format</a>.  Each row contains metadata information for an academic article. The articles are classified by the country of study and whether or not data is used in the article.</p>",
+                "status": "Active",
+                "work_unit": null,
+                "citation": null,
+                "keywords": null,
+                "language_supported": null,
+                "sort_order": null
+            },
+            "constraints": {
+                "id": "6bcd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "legal": {
+                    "access_constraints": null,
+                    "use_constraints": null,
+                    "other_constraints": null,
+                    "disclaimer": null,
+                    "copyright": null
+                },
+                "security": {
+                    "classification": "Public",
+                    "exception": null,
+                    "user_note": null
+                },
+                "license": {
+                    "license_id": null,
+                    "custom_license_information": null,
+                    "license_reference": null,
+                    "exception": null
+                }
+            },
+            "distribution": {
+                "id": "6ccd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "format": null,
+                "url": "https://datacatalogfiles.worldbank.org/ddh-published/0065200/DR0092802/results_completed_updated_20231003.fst?versionId=2024-05-13T14:24:53.4915459Z",
+                "ext_url": null,
+                "website_url": null,
+                "distribution_description": null,
+                "distribution_format": "fst",
+                "distribution_size": "1592274238",
+                "is_directory": null,
+                "is_large_dataset": null,
+                "file_name": "results_completed_updated_20231003.fst",
+                "preview_api_url": null
+            },
+            "geographical_extent": {
+                "id": "6dcd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "description": null,
+                "coverage": null,
+                "geo_json": null,
+                "bounding_box": {
+                    "west_longitude": null,
+                    "east_longitude": null,
+                    "north_latitude": null,
+                    "south_latitude": null
+                }
+            },
+            "lineage": {
+                "id": "6ecd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "harvest_system": null,
+                "harvest_system_reference": null
+            },
+            "maintenance_information": {
+                "id": "6fcd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "update_frequency": "No fixed schedule",
+                "maintenance_note": null,
+                "version": null,
+                "version_date": "11/27/2023 12:00:00 AM",
+                "version_notes": "1",
+                "version_description": null,
+                "version_producer": "Kamwoo Lee"
+            },
+            "reference_system": {
+                "id": "70cd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "reference_id": null,
+                "version": null,
+                "map_projection": null
+            },
+            "spatial_resolution": {
+                "id": "71cd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "granularity": null,
+                "pixel_resolution": null
+            },
+            "temporal_extent": {
+                "id": "72cd80cb-cd7f-ee11-8179-000d3a32e0cf",
+                "end_date": null,
+                "start_date": null,
+                "description": null,
+                "duration": null,
+                "coverage": null
+            },
+            "temporal_resolution": {
+                "periodicity": null
+            }
+        },
+        {
+            "resource_id": "08536240-c67f-ee11-8179-000d3a32e735",
+            "name": "data_use_article_database",
+            "resource_unique_id": "DR0092801",
+            "archive_nid": null,
+            "last_updated": "11/10/2023 12:00:00 AM",
+            "last_updated_date": "2023-11-10T00:00:00",
+            "first_published_date": "11/27/2023 12:00:00 AM",
+            "download_count": null,
+            "dataset_id": "872ec45a-c57f-ee11-8179-0022480b462c",
+            "dataset": {
+                "id": "872ec45a-c57f-ee11-8179-0022480b462c",
+                "name": "Data Use in Academia Dataset",
+                "unique_id": "0065200"
+            },
+            "identification": {
+                "id": "0b536240-c67f-ee11-8179-000d3a32e735",
+                "title": "data_use_article_database",
+                "type": null,
+                "description": "<p>This dataset contains the article classifications for around 1 million articles of the country of study and data use classification from the machine learning model.</p>",
+                "status": "Active",
+                "work_unit": null,
+                "citation": null,
+                "keywords": null,
+                "language_supported": null,
+                "sort_order": null
+            },
+            "constraints": {
+                "id": "0c536240-c67f-ee11-8179-000d3a32e735",
+                "legal": {
+                    "access_constraints": null,
+                    "use_constraints": null,
+                    "other_constraints": null,
+                    "disclaimer": null,
+                    "copyright": null
+                },
+                "security": {
+                    "classification": "Public",
+                    "exception": null,
+                    "user_note": null
+                },
+                "license": {
+                    "license_id": null,
+                    "custom_license_information": null,
+                    "license_reference": null,
+                    "exception": null
+                }
+            },
+            "distribution": {
+                "id": "0d536240-c67f-ee11-8179-000d3a32e735",
+                "format": "csv",
+                "url": "https://datacatalogfiles.worldbank.org/ddh-published/0065200/DR0092801/results_completed_updated_20231003.csv?versionId=2024-05-13T14:24:55.8520476Z",
+                "ext_url": null,
+                "website_url": null,
+                "distribution_description": null,
+                "distribution_format": "csv",
+                "distribution_size": "2091296909",
+                "is_directory": null,
+                "is_large_dataset": null,
+                "file_name": "results_completed_updated_20231003.csv",
+                "preview_api_url": "https://ddhinboundapi.ase.worldbank.org/resource/preview?resourceId=08536240-c67f-ee11-8179-000d3a32e735&versionId=2024-05-13T14:24:55.8520476Z&rowLimit=10"
+            },
+            "geographical_extent": {
+                "id": "0e536240-c67f-ee11-8179-000d3a32e735",
+                "description": null,
+                "coverage": null,
+                "geo_json": null,
+                "bounding_box": {
+                    "west_longitude": null,
+                    "east_longitude": null,
+                    "north_latitude": null,
+                    "south_latitude": null
+                }
+            },
+            "lineage": {
+                "id": "0f536240-c67f-ee11-8179-000d3a32e735",
+                "harvest_system": null,
+                "harvest_system_reference": null
+            },
+            "maintenance_information": {
+                "id": "10536240-c67f-ee11-8179-000d3a32e735",
+                "update_frequency": "No fixed schedule",
+                "maintenance_note": null,
+                "version": null,
+                "version_date": "11/27/2023 12:00:00 AM",
+                "version_notes": "Version 1",
+                "version_description": null,
+                "version_producer": "Kamwoo Lee"
+            },
+            "reference_system": {
+                "id": "11536240-c67f-ee11-8179-000d3a32e735",
+                "reference_id": null,
+                "version": null,
+                "map_projection": null
+            },
+            "spatial_resolution": {
+                "id": "12536240-c67f-ee11-8179-000d3a32e735",
+                "granularity": null,
+                "pixel_resolution": null
+            },
+            "temporal_extent": {
+                "id": "13536240-c67f-ee11-8179-000d3a32e735",
+                "end_date": null,
+                "start_date": null,
+                "description": null,
+                "duration": null,
+                "coverage": null
+            },
+            "temporal_resolution": {
+                "periodicity": null
+            }
+        },
+        {
+            "resource_id": "a42cda61-ce7f-ee11-8179-0022480b462c",
+            "name": "data_use_country_data",
+            "resource_unique_id": "DR0092803",
+            "archive_nid": null,
+            "last_updated": "11/10/2023 12:00:00 AM",
+            "last_updated_date": "2023-11-10T00:00:00",
+            "first_published_date": "11/27/2023 12:00:00 AM",
+            "download_count": null,
+            "dataset_id": "872ec45a-c57f-ee11-8179-0022480b462c",
+            "dataset": {
+                "id": "872ec45a-c57f-ee11-8179-0022480b462c",
+                "name": "Data Use in Academia Dataset",
+                "unique_id": "0065200"
+            },
+            "identification": {
+                "id": "a72cda61-ce7f-ee11-8179-0022480b462c",
+                "title": "data_use_country_data",
+                "type": null,
+                "description": "<p>This file contains the aggregate counts of articles using data by country.  A machine learning algorithm was used to classify country of study and whether the article used data.  Using these two pieces of information, tallies of the number of articles produced about each country in each year are produced.  An assorted set of covariates are included from the World Development Indicators as well in the dataset.  These data are used in the working paper, \"<strong style=\"color: black;\">Missing Evidence: </strong></p><p><strong style=\"color: black;\">Tracking Academic Data Use around the World\".</strong></p>",
+                "status": "Active",
+                "work_unit": null,
+                "citation": null,
+                "keywords": null,
+                "language_supported": null,
+                "sort_order": null
+            },
+            "constraints": {
+                "id": "a82cda61-ce7f-ee11-8179-0022480b462c",
+                "legal": {
+                    "access_constraints": null,
+                    "use_constraints": null,
+                    "other_constraints": null,
+                    "disclaimer": null,
+                    "copyright": null
+                },
+                "security": {
+                    "classification": "Public",
+                    "exception": null,
+                    "user_note": null
+                },
+                "license": {
+                    "license_id": null,
+                    "custom_license_information": null,
+                    "license_reference": null,
+                    "exception": null
+                }
+            },
+            "distribution": {
+                "id": "a92cda61-ce7f-ee11-8179-0022480b462c",
+                "format": "csv",
+                "url": "https://datacatalogfiles.worldbank.org/ddh-published/0065200/DR0092803/data_use_country_scores_annual.csv?versionId=2024-05-13T14:25:01.7623013Z",
+                "ext_url": null,
+                "website_url": null,
+                "distribution_description": null,
+                "distribution_format": "csv",
+                "distribution_size": "4595613",
+                "is_directory": null,
+                "is_large_dataset": null,
+                "file_name": "data_use_country_scores_annual.csv",
+                "preview_api_url": "https://ddhinboundapi.ase.worldbank.org/resource/preview?resourceId=a42cda61-ce7f-ee11-8179-0022480b462c&versionId=2024-05-13T14:25:01.7623013Z&rowLimit=10"
+            },
+            "geographical_extent": {
+                "id": "aa2cda61-ce7f-ee11-8179-0022480b462c",
+                "description": null,
+                "coverage": null,
+                "geo_json": null,
+                "bounding_box": {
+                    "west_longitude": null,
+                    "east_longitude": null,
+                    "north_latitude": null,
+                    "south_latitude": null
+                }
+            },
+            "lineage": {
+                "id": "ab2cda61-ce7f-ee11-8179-0022480b462c",
+                "harvest_system": null,
+                "harvest_system_reference": null
+            },
+            "maintenance_information": {
+                "id": "ac2cda61-ce7f-ee11-8179-0022480b462c",
+                "update_frequency": "No fixed schedule",
+                "maintenance_note": null,
+                "version": null,
+                "version_date": "11/27/2023 12:00:00 AM",
+                "version_notes": "1",
+                "version_description": null,
+                "version_producer": "Kamwoo Lee"
+            },
+            "reference_system": {
+                "id": "ad2cda61-ce7f-ee11-8179-0022480b462c",
+                "reference_id": null,
+                "version": null,
+                "map_projection": null
+            },
+            "spatial_resolution": {
+                "id": "ae2cda61-ce7f-ee11-8179-0022480b462c",
+                "granularity": null,
+                "pixel_resolution": null
+            },
+            "temporal_extent": {
+                "id": "af2cda61-ce7f-ee11-8179-0022480b462c",
+                "end_date": null,
+                "start_date": null,
+                "description": null,
+                "duration": null,
+                "coverage": null
+            },
+            "temporal_resolution": {
+                "periodicity": null
+            }
+        }
+    ],
+    "indicators": [],
+    "citation": []
+}
