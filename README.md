@@ -50,4 +50,9 @@ published](countrry_output.png)
 
 -   Which journals or venues publish the most articles?
 
+### TODO
+1. Create Unique Journal count
+2. Sort publication by country and journal
+3. Find Median publication by year by country
+   
 # References
