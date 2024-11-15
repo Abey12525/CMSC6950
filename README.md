@@ -54,8 +54,10 @@ published](countrry_output.png)
 
 ### Observing the top Journal and amount of papers published. 
 
-![Top 80% Countries by number of papers
-published](top80journals.pdf)
+![80th percential of journals and publications ](top80journals.pdf)
+
+
+![](top80journals.png)
 
 ### TODO
 1. Create Unique Journal count
