@@ -50,6 +50,13 @@ published](countrry_output.png)
 
 -   Which journals or venues publish the most articles?
 
+## Analysis
+
+### Observing the top Journal and amount of papers published. 
+
+![Top 80% Countries by number of papers
+published](top80journals.pdf)
+
 ### TODO
 1. Create Unique Journal count
 2. Sort publication by country and journal
