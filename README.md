@@ -88,3 +88,9 @@ The dataset providees an interesting look at the global distribution of research
 - **Median Values**: The median numbers of papers published fluctuates across the yearrs, reflecting shifts in global research output. The median starts at alower value in earlier years but gradually increases as the overall research ouput grows globally. 
    
 # References
+
+Here is the markdown format for the two references:
+
+#### [1.] **Data Use in Academia** Stacy, B., Kitzmüller, L., Wang, X., Mahler, D. G., & Serajuddin, U. (2023). *[Data Use in Academia](https://datacatalog.worldbank.org/search/dataset/0065200/Data-Use-in-Academia-Dataset)*. Accessed: Oct 9, 2024.
+
+#### [2.] S2ORC: The Semantic Scholar Open Research Corpus Lo, K., Wang, L. L., Neumann, M., Kinney, R., & Weld, D. S. (2020). *S2ORC: The Semantic Scholar Open Research Corpus*. [arXiv:1911.02782](https://arxiv.org/abs/1911.02782).
