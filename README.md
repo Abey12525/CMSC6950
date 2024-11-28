@@ -8,15 +8,19 @@ title: Project Discription
 ---
 
 # Project Setup 
-Clone the project : ```git clone https://github.com/Abey12525/METAEXPLORE.git```
-Download the following datasets into project directory 
+Clone the project : ```git clone https://github.com/Abey12525/METAEXPLORE.git```  
 
-Dataset : results_completed.csv(rename the dataset from results_completed_updated_20231003.csv to results_completed.csv ) [https://datacatalogfiles.worldbank.org/ddh-published/0065200/DR0092801/results_completed_updated_20231003.csv?versionId=2024-05-13T14:24:55.8520476Z]  
-data_use_country_scores_annual.csv [https://datacatalogfiles.worldbank.org/ddh-published/0065200/DR0092803/data_use_country_scores_annual.csv?versionId=2024-05-13T14:25:01.7623013Z]
+Download the following datasets into project directory 
+  
+Dataset : results_completed.csv(rename the dataset from results_completed_updated_20231003.csv to results_completed.csv ) [https://datacatalogfiles.worldbank.org/ddh-published/0065200/DR0092801/results_completed_updated_20231003.csv?versionId=2024-05-13T14:24:55.8520476Z]    
+
+data_use_country_scores_annual.csv [https://datacatalogfiles.worldbank.org/ddh-published/0065200/DR0092803/data_use_country_scores_annual.csv?versionId=2024-05-13T14:25:01.7623013Z]  
+
 
 Install required libraries : 
 ```pip install requirements.txt```
-
+  
+  
 # Running the project 
 you can open the stats.ipynb Jupyter notebook   
 or   
