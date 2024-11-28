@@ -231,7 +231,7 @@ def prepare_percentage_diff_data(df_percentage_diff, diff_from_median=1000):
         above_1000 = len(year_info[year_info['Percentage Difference'] > diff_from_median])
         zero_to_1000 = len(year_info[(year_info['Percentage Difference'] > 0) &
                                      (year_info['Percentage Difference'] <= diff_from_median)])
-        below_0 = len(year_info[year_info['Percentage Difference'] < 0])
+        below_0 = len(year_info[year_info['Percentage Difference'] <= 0])
         # print("Total after split : ",above_1000+zero_to_1000+below_0)
         categories['Above 1000%'].append(above_1000)
         categories['0% to 1000%'].append(zero_to_1000)
