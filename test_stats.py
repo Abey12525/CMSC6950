@@ -44,4 +44,4 @@ def mock_papers_per_year_by_country():
 def test_process_chunk(mock_chunk):
     global country_counts
     st.process_chunk(mock_chunk)
-    assert st.country_counts == {'US': 3, 'Canada': 2, 'UK': 1, 'Germany': 1}
+    assert st.country_counts == {'US': 3, 'Canada': 3, 'UK': 1, 'Germany': 1}

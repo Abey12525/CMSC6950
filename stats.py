@@ -39,11 +39,10 @@ def process_chunk(chunk):
         for country in countries_list:
             if country == 'nf':
                 continue
-
-            if country in country_counts:
+            elif country in country_counts:
                 country_counts[country] += 1
             else:
-                country_counts[country] = 0
+                country_counts[country] = 1
 
 
 
