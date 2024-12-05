@@ -1,3 +1,12 @@
+[!NOTE]  
+The data used in this project is derived from a restricted subset of the Semantic Scholar Open Research Corpus (S2ORC). From an original dataset of over 130 million papers, multiple filters were applied to focus on relevant articles:  
+
+- Only papers with abstracts and parsable PDFs/LaTeX files (2000–2020) were included.  
+- Fields like Economics, Medicine, and Sociology were prioritized, excluding others like Biology and Physics.  
+- A random convenience sample of ~1 million articles was used due to computational limits.  
+
+These restrictions mean the dataset does not comprehensively represent global academic research. Additionally, the Natural Language Processing (NLP) methods used for classification may introduce biases or errors. Interpret results with caution.  
+
 ---
 author:
 - Abey Richard Hurtis
@@ -30,18 +39,6 @@ or
 you can run the following comman for a non interactive result : ```python stats.py```  
 
 **project developed on Python 3.11.4**
----
-
-[!NOTE]  
-The data used in this project is derived from a restricted subset of the Semantic Scholar Open Research Corpus (S2ORC). From an original dataset of over 130 million papers, multiple filters were applied to focus on relevant articles:  
-
-- Only papers with abstracts and parsable PDFs/LaTeX files (2000–2020) were included.  
-- Fields like Economics, Medicine, and Sociology were prioritized, excluding others like Biology and Physics.  
-- A random convenience sample of ~1 million articles was used due to computational limits.  
-
-These restrictions mean the dataset does not comprehensively represent global academic research. Additionally, the Natural Language Processing (NLP) methods used for classification may introduce biases or errors. Interpret results with caution.  
-
-
 ---
 # Introduction
 
