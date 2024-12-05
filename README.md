@@ -7,15 +7,6 @@
 > 
 > These restrictions mean the dataset does not comprehensively represent global academic research. Additionally, the Natural Language Processing (NLP) methods used for classification may introduce biases or errors. Interpret results with caution.  
 
----
-author:
-- Abey Richard Hurtis
-bibliography:
-- ref.bib
-date: 2024-10-16
-title: Project Discription
----
-
 # Project Setup 
 Clone the project : ```git clone https://github.com/Abey12525/METAEXPLORE.git```  
 
