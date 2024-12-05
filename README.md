@@ -28,8 +28,8 @@ Install required libraries :
 you can open the stats.ipynb Jupyter notebook   
 or   
 you can run the following comman for a non interactive result : ```python stats.py```  
-
 **project developed on Python 3.11.4**
+
 ---
 # Introduction
 
