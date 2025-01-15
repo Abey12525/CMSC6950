@@ -9,6 +9,7 @@
 
 # Project Setup 
 Clone the project : ```git clone https://github.com/Abey12525/METAEXPLORE.git```  
+Change directory : ```cd METAEXPLORE```
 
 ---
 Download the following datasets into project directory 
